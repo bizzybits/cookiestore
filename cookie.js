@@ -9,6 +9,7 @@ var location1 = {
   maxCust: 88,
   avgCookieSale: 5.2,
   hours: ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"],
+  total: 0,
   toHTML: function() {
     var HTML = '<ul>'+ location1.name;
     for (var cookieTime = 0; cookieTime < location1.hours.length; cookieTime++) {
@@ -28,7 +29,8 @@ var location1 = {
     var amountOfCookies = ((customersHour) * (location1.avgCookieSale))
     console.log(amountOfCookies)
     return parseInt(amountOfCookies);
-
+    var cookies = location1.cookiesPerHour() + location1.total
+    console.log(total);
   }
 
 }
