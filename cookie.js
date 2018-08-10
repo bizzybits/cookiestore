@@ -2,6 +2,7 @@ function generateRandom(min, max) {
   return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
+
 var location1 = {
   name: 'Pioneer Square',
   minCust: 17,
@@ -11,10 +12,23 @@ var location1 = {
   toHTML: function() {
     var HTML = '<ul>'+ location1.name;
     for (var cookieTime = 0; cookieTime < location1.hours.length; cookieTime++) {
-      HTML += "<li>" + location1.hours[cookieTime] + "</li>";
+      HTML += "<li>" + location1.hours[cookieTime] + " : " + location1.cookiesPerHour() + " cookies sold/hour </li>";
     }
       HTML += '</ul>';
     return HTML;
+  },
+  cookiesPerHour: function() {
+    //I want this method to create a random number that is the number of cookies sold per hour at this location
+    //i need the location name, --using min and max we're going ot get a random amount of customers between the min and max and then
+    //it's going to calculate out a random number of cookies sold using the min and max # of customers
+
+    //number of customers per hour and number of cookies each customer buys
+    var customersHour = generateRandom(location1.minCust, location1.maxCust)
+    console.log(customersHour)
+    var amountOfCookies = ((customersHour) * (location1.avgCookieSale))
+    console.log(amountOfCookies)
+    return parseInt(amountOfCookies);
+
   }
 
 }
@@ -24,19 +38,32 @@ var location2 = {
   minCust: 6,
   maxCust: 24,
   avgCookieSale: 1.2,
+  hours: ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"],
   toHTML: function() {
-    return '<li>'+ location2.name +  location2.minCust +  location2.maxCust + location2.avgCookieSale +'</li>';
+    var HTML = '<ul>'+ location2.name;
+    for (var cookieTime = 0; cookieTime < location2.hours.length; cookieTime++) {
+      HTML += "<li>" + location2.hours[cookieTime] + "</li>";
+    }
+      HTML += '</ul>';
+    return HTML;
   }
 }
+
 
   var location3 = {
     name: 'Washington Square',
     minCust: 11,
     maxCust: 38,
     avgCookieSale: 1.9,
-  toHTML: function() {
-    return '<li>'+ location3.name +  location3.minCust +  location3.maxCust + location3.avgCookieSale +'</li>';
-  }
+    hours: ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"],
+    toHTML: function() {
+      var HTML = '<ul>'+ location3.name;
+      for (var cookieTime = 0; cookieTime < location3.hours.length; cookieTime++) {
+        HTML += "<li>" + location3.hours[cookieTime] + "</li>";
+      }
+        HTML += '</ul>';
+      return HTML;
+    }
 }
 
   var location4 = {
@@ -44,9 +71,15 @@ var location2 = {
     minCust: 20,
     maxCust: 48,
     avgCookieSale: 3.3,
-  toHTML: function() {
-    return '<li>'+ location4.name +  location4.minCust +  location4.maxCust + location4.avgCookieSale +'</li>';
-  }
+    hours: ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"],
+    toHTML: function() {
+      var HTML = '<ul>'+ location4.name;
+      for (var cookieTime = 0; cookieTime < location4.hours.length; cookieTime++) {
+        HTML += "<li>" + location4.hours[cookieTime] + "</li>";
+      }
+        HTML += '</ul>';
+      return HTML;
+    }
 }
 
   var location5 = {
@@ -54,9 +87,15 @@ var location2 = {
     minCust: 3,
     maxCust: 24,
     avgCookieSale: 2.6,
-  toHTML: function() {
-    return '<li>'+ location5.name +  location5.minCust +  location5.maxCust + location5.avgCookieSale +'</li>';
-  }
+    hours: ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"],
+    toHTML: function() {
+      var HTML = '<ul>'+ location5.name;
+      for (var cookieTime = 0; cookieTime < location5.hours.length; cookieTime++) {
+        HTML += "<li>" + location5.hours[cookieTime] + "</li>";
+      }
+        HTML += '</ul>';
+      return HTML;
+    }
 }
 
 var locations = [
@@ -77,6 +116,8 @@ function buildList() {
   }
 }
 
-//buildList();
-var list = document.getElementById('storeLocations');
-  list.innerHTML += location1.toHTML();
+buildList()
+location1.cookiesPerHour()
+//var list = document.getElementById('storeLocations');
+//console.log(list)
+  //list.innerHTML += location.toHTML();
