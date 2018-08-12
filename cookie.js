@@ -13,9 +13,12 @@ var location1 = {
   toHTML: function() {
     var HTML = '<ul>'+ location1.name;
     for (var cookieTime = 0; cookieTime < location1.hours.length; cookieTime++) {
-      HTML += "<li>" + location1.hours[cookieTime] + " : " + location1.cookiesPerHour() + " cookies sold/hour </li>";
+      var cookiesMade = location1.cookiesPerHour()
+      location1.total += cookiesMade
+      console.log('total cookies made' + location1.total )
+      HTML += "<li>" + location1.hours[cookieTime] + " : " + cookiesMade + " cookies sold/hour </li>";
     }
-      HTML += '</ul>';
+      HTML += location1.total + '</ul>';
     return HTML;
   },
   cookiesPerHour: function() {
@@ -25,12 +28,8 @@ var location1 = {
 
     //number of customers per hour and number of cookies each customer buys
     var customersHour = generateRandom(location1.minCust, location1.maxCust)
-    console.log(customersHour)
     var amountOfCookies = ((customersHour) * (location1.avgCookieSale))
-    console.log(amountOfCookies)
     return parseInt(amountOfCookies);
-    var cookies = location1.cookiesPerHour() + location1.total
-    console.log(total);
   }
 
 }
