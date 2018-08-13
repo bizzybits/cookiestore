@@ -175,6 +175,9 @@ function buildList() {
 
 buildList()
 location1.cookiesPerHour()
-//var list = document.getElementById('storeLocations');
-//console.log(list)
-  //list.innerHTML += location.toHTML();
+
+var list = document.getElementById('comments');
+var listItem = document.createElement('li');
+  listItem.innerText = "Customer Cookie Comments";
+  //listItem.innerText += location.toHTML();
+  list.appendChild(listItem);
