@@ -138,7 +138,7 @@ var location2 = {
       var cookiesMade = location5.cookiesPerHour()
       location5.total += cookiesMade
       console.log('total cookies made' + location5.total )
-      HTML += "<li>" + location5.hours[cookieTime] + " : " + cookiesMade + " cookies sold/hour </li>";
+      HTML += "<li>" + location5.hours[cookieTime] + " : " + cookiesMade + " sold/hour </li>";
     }
       HTML +=  "TOTAL: " + location5.total + '</ul>';
     return HTML;

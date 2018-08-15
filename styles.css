@@ -1,33 +1,51 @@
 
 body {
   font-family: system-ui;
+  font-size: 20px;
   text-align: center;
-  background-image: url("fishdonotlikecoffee.jpg");
+  font-weight: bold;
+  color: #ffb400;
 }
 
 header {
-  border: solid;
 }
 
 nav {
     display: inline-block;
-    width: 100%;
+    width: 75%;
     vertical-align: top;
-    background-color: #ff5a5f;
+    background-color: #b4a76c;
+    color: #ffb400;
 }
+
+hr {
+    border: none;
+    border-top: 3px double #333;
+    color: black;
+    overflow: visible;
+    text-align: center;
+    height: 15px;
+    background-image: url(salmon_clip_art_5996);
+}
+
+article {
+  width: 75%;
+  margin: auto;
+}
+
 
 section {
   display: inline-block;
-  width: 60%;
+  width: 100%;
   vertical-align: top;
-  background-image: url("sockeye.jpg") ;
+  background-color: #b4a76c;
 }
 
 aside {
   display: inline-block;
-  width: 18%;
+  width: 100%;
   vertical-align: top;
-  background-color: #ff5a5f;
+  background-color: #b4a76c;
 }
 
 p:first-of-type {
@@ -59,11 +77,35 @@ nav a:hover + .sub-menu, .sub-menu:hover {
   display: block;
 }
 
-li {text-align: center;
-    vertical-align: middle;
+#nav-list > li {
+  display: inline;
+  margin: 10px 10px;
+  font-size: 1.5em;
+}
 
+
+ul {
+  list-style: none;
+}
+
+li {
+  text-align: center;
+    vertical-align: middle;
   }
 
 h1 {text-align: center;
     font-family: Arial;
+    color: #ffb400;
+    font-size: 300%;
+
+}
+
+#locations {
+  display: flex;
+  flex-direction: row;
+}
+
+aside {
+  border-top: solid;
+  color: #ffb400 ;
 }
