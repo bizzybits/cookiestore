@@ -2,7 +2,7 @@
 body {
   font-family: system-ui;
   text-align: center;
-  background-color: #9ca299;
+  background-image: url("fishdonotlikecoffee.jpg");
 }
 
 header {
@@ -20,7 +20,7 @@ section {
   display: inline-block;
   width: 60%;
   vertical-align: top;
-  background-color: #9ca299;
+  background-image: url("sockeye.jpg") ;
 }
 
 aside {
