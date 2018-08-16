@@ -2,21 +2,29 @@ function generateRandom(min, max) {
   return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
+var hours = ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"]
+
+//var storeLocation = function(locationName, minCust, maxCust) {
+  //this.name = locationName;
+  //this.minCust = minCust;
+  //this.maxCust = maxCust;
+//}
+
 
 var location1 = {
   name: 'Pioneer Square',
   minCust: 17,
   maxCust: 88,
   avgCookieSale: 5.2,
-  hours: ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"],
+  //hours: ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"],
   total: 0,
   toHTML: function() {
     var HTML = '<ul>'+ location1.name;
-    for (var cookieTime = 0; cookieTime < location1.hours.length; cookieTime++) {
+    for (var cookieTime = 0; cookieTime < hours.length; cookieTime++) {
       var cookiesMade = location1.cookiesPerHour()
       location1.total += cookiesMade
       console.log('total cookies made' + location1.total )
-      HTML += "<li>" + location1.hours[cookieTime] + " : " + cookiesMade + " cookies sold/hour </li>";
+      HTML += "<li>" + hours[cookieTime] + " : " + cookiesMade + " sold/hour </li>";
     }
       HTML += "TOTAL: " + location1.total + '</ul>';
     return HTML;
@@ -31,7 +39,6 @@ var location1 = {
     var amountOfCookies = ((customersHour) * (location1.avgCookieSale))
     return parseInt(amountOfCookies);
   }
-
 }
 
 var location2 = {
@@ -39,15 +46,14 @@ var location2 = {
   minCust: 6,
   maxCust: 24,
   avgCookieSale: 1.2,
-  hours: ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"],
   total: 0,
   toHTML: function() {
     var HTML = '<ul>'+ location2.name;
-    for (var cookieTime = 0; cookieTime < location2.hours.length; cookieTime++) {
+    for (var cookieTime = 0; cookieTime < hours.length; cookieTime++) {
       var cookiesMade = location2.cookiesPerHour()
       location2.total += cookiesMade
       console.log('total cookies made' + location2.total )
-      HTML += "<li>" + location2.hours[cookieTime] + " : " + cookiesMade + " cookies sold/hour </li>";
+      HTML += "<li>" + hours[cookieTime] + " : " + cookiesMade + " sold/hour </li>";
     }
       HTML += "TOTAL: " + location2.total + '</ul>';
     return HTML;
@@ -101,15 +107,14 @@ var location2 = {
     minCust: 20,
     maxCust: 48,
     avgCookieSale: 3.3,
-    hours: ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"],
     total: 0,
     toHTML: function() {
       var HTML = '<ul>'+ location4.name;
-    for (var cookieTime = 0; cookieTime < location4.hours.length; cookieTime++) {
+    for (var cookieTime = 0; cookieTime < hours.length; cookieTime++) {
       var cookiesMade = location4.cookiesPerHour()
       location4.total += cookiesMade
       console.log('total cookies made' + location4.total )
-      HTML += "<li>" + location4.hours[cookieTime] + " : " + cookiesMade + " cookies sold/hour </li>";
+      HTML += "<li>" + hours[cookieTime] + " : " + cookiesMade + " sold/hour </li>";
     }
       HTML +=  "TOTAL: " + location4.total + '</ul>';
     return HTML;
@@ -130,15 +135,14 @@ var location2 = {
     minCust: 3,
     maxCust: 24,
     avgCookieSale: 2.6,
-    hours: ["10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"],
     total: 0,
     toHTML: function() {
       var HTML = '<ul>'+ location5.name;
-    for (var cookieTime = 0; cookieTime < location5.hours.length; cookieTime++) {
+    for (var cookieTime = 0; cookieTime < hours.length; cookieTime++) {
       var cookiesMade = location5.cookiesPerHour()
       location5.total += cookiesMade
       console.log('total cookies made' + location5.total )
-      HTML += "<li>" + location5.hours[cookieTime] + " : " + cookiesMade + " sold/hour </li>";
+      HTML += "<li>" + hours[cookieTime] + " : " + cookiesMade + " sold/hour </li>";
     }
       HTML +=  "TOTAL: " + location5.total + '</ul>';
     return HTML;
@@ -165,7 +169,6 @@ var locations = [
 console.log(locations);
 
 function buildList() {
-  console.log(locations.length);
   var list = document.getElementById('locations');
   for (var index = 0; index < locations.length; index++) {
     var location = locations[index];
@@ -173,6 +176,27 @@ function buildList() {
   }
 }
 
+//  header: function () {
+  //  var table = doc.getElementById('locations');
+    //var row = doc.createElement('tr');
+    //var heading = document.createElement('th');
+    //heading.setAttribute("colspan", "2");
+    //heading.innerText = "Pioneer Place");
+    //row.appendChild(heading);
+    //table.appendChild(row);
+  //}
+//}
+
+  //buildTable: function() {
+    //var container = document.getElementById('table-container');
+    //var table = document.getElementById('table');
+    //table.setAttribute("border", "1");
+    //this.header(table);
+    //this.tableHours(table);
+    //this.totalRow(table);
+    //this.addChild(table);
+  //}
+//}
 buildList()
 location1.cookiesPerHour()
 

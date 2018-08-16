@@ -29,7 +29,7 @@ hr {
 }
 
 article {
-  width: 75%;
+  width: 100%;
   margin: auto;
 }
 
@@ -103,6 +103,9 @@ h1 {text-align: center;
 #locations {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  text-align: center;
+  
 }
 
 aside {
