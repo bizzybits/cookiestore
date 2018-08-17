@@ -24,6 +24,16 @@ function Store(name, minCust, maxCust, avgCookieSale) {
     var customersHour = generateRandom(this.minCust, this.maxCust);
     var amountOfCookies = ((customersHour) * (this.avgCookieSale))
   };
+  this.buildTable = function() {
+    var container = document.getElementById('table-container');
+    var table = document.getElementById('table');
+    table.setAttribute("border", "1");
+    this.header(table);
+    this.tableHours(table);
+    this.totalRow(table);
+    this.appendChild(table);
+}
+
 
 }
 
@@ -68,6 +78,8 @@ var locations = [
   pearlLocation,
 ];
 
+//method that also builds out table for me in the constructor function
+
 function buildList() {
    var list = document.getElementById('locations');
    for (var index = 0; index < locations.length; index++) {
@@ -88,15 +100,15 @@ header = function (store) {
 }
 
 
-buildTable = function() {
-  var container = document.getElementById('table-container');
-  var table = document.getElementById('table');
-  table.setAttribute("border", "1");
-  this.header(table);
-  this.tableHours(table);
-  this.totalRow(table);
-  this.addChild(table);
-}
+//buildTable = function() {
+  //var container = document.getElementById('table-container');
+  //var table = document.getElementById('table');
+  //table.setAttribute("border", "1");
+  //this.header(table);
+  //this.tableHours(table);
+  //this.totalRow(table);
+  //this.appendChild(table);
+//}
 
 
 buildList();
