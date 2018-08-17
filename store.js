@@ -20,6 +20,7 @@ function Store(name, minCust, maxCust, avgCookieSale) {
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgCookieSale = avgCookieSale;
+  this.total = 0;
   this.cookiesPerHour = function () {
     var customersHour = generateRandom(this.minCust, this.maxCust);
     var amountOfCookies = ((customersHour) * (this.avgCookieSale))
@@ -32,10 +33,9 @@ function Store(name, minCust, maxCust, avgCookieSale) {
     this.tableHours(table);
     this.totalRow(table);
     this.appendChild(table);
-}
+  };
 
 
-}
 
 var pioneerLocation = new Store('Pioneer Square', 17, 88, 5.2);
 var airportLocation = new Store('Portland Airport', 6, 24, 1.4);
