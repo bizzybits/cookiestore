@@ -101,6 +101,45 @@ for(var locationsIndex = 0; locationsIndex < stores.length; locationsIndex++) {
   stores[locationsIndex].createData();
 }
 
+function addStore(storeForm) {
+  console.log(storeForm.storeName.value);
+  console.log(storeForm.minCust.value);
+  console.log(storeForm.maxCust.value);
+  console.log(storeForm.avgCookieSale.value);
+
+  var range = storeForm.maxCust.value - storeForm.minCust.value;
+  console.log(range);
+
+  var random = Math.random() * range;
+  console.log(random);
+
+  var customers = random + parseInt(storeForm.minCust.value);
+  console.log(customers);
+}
+
+this.addStore();
+
+function addNewShop() {
+    var locName = document.getElementById("name").value;
+    var minimum = document.getElementById("min").value;
+    var maximum = document.getElementById("max").value;
+    var averageSales = document.getElementById("average").value;
+    if (document.getElementById('name').value.length == 0) {
+       alert("Please fill in all fields in the form");
+    } else {
+        shops.push(new shopLocation(locName, minimum, maximum, averageSales));
+        event.preventDefault();
+        shops[shops.length - 1].buildTable(placeTable);
+        var dropDownMenu = document.getElementById("dropDownList");
+        var addDropDown = document.createElement("option");
+        addDropDown.setAttribute("value", locName);
+        addDropDown.innerText = locName;
+        dropDownMenu.appendChild(addDropDown);
+    }
+}
+
+var addShop = document.getElementById("submit");
+addShop.addEventListener("click", addNewShop, false);
 
 
 
